@@ -1,4 +1,4 @@
-// Padronixza o caminho para todos os sistemas opracionais
+// Padroniza o caminho para todos os sistemas opracionais
 const { resolve } = require('path');
 
 module.exports = {

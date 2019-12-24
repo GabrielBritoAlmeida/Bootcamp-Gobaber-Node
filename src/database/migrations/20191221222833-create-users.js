@@ -22,7 +22,7 @@ module.exports = {
         dafaultValue: false,
       },
       provider: {
-        // Cliente é false | Prestador é true
+        // Cliente é 'false' | Prestador é 'true'
         type: Sequelize.BOOLEAN,
         defaultValue: false,
         allowNull: false,

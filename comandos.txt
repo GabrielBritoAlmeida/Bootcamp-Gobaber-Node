@@ -17,6 +17,14 @@
 
   yarn add sucrase -D
 
+
+// Bcryptjs (Hash de senha)
+  yarn add bcryptjs
+
+// Rodando servidor
+  yarn dev
+
+
 ------------------ Instalando o Docker -----------------------------------------------
 
 Atualize o aptíndice do pacote.
@@ -38,9 +46,9 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
   docker ps (mostra o Container atual rodando)
 
 
-// Start no banco
+// Start no Container
 
-  docker start NomeBanco ou ID
+  docker start Nome_Container ou ID
 
 
 //Verifica se tem erro no container
