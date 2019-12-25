@@ -21,6 +21,11 @@
 // Bcryptjs (Hash de senha)
   yarn add bcryptjs
 
+
+// JWT
+  yarn add jsonwebtoken
+
+
 // Rodando servidor
   yarn dev
 
