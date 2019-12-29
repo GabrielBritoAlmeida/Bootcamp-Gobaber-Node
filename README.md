@@ -10,9 +10,9 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 # ---------- Pacotes ------------------
 
-> Express
+#Express
 
-# yarn add Express
+> yarn add Express
 
 > Nodemon
 
