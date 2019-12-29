@@ -104,7 +104,17 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 # CREATE
 
+-> users
+
 > yarn sequelize migration:create --name=create-users
+
+-> Criando campo de avatar para tabela de usuário
+
+> yarn sequelize migration:create --name=add-avatar-field-to-users
+
+-> files
+
+> yarn sequelize migration:create --name=create-files
 
 # RODANDO A MIGRATION
 
