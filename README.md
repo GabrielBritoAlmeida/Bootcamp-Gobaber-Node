@@ -46,6 +46,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add yup
 
+# Trabalhando com arquivos Multer
+
+> yarn add multer
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
