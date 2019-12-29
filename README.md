@@ -1,12 +1,12 @@
 ## Bootcamp-Gobaber
 
-# Projeto final vai entregar um sistema de agendamento para barbearia.
+Projeto final vai entregar um sistema de agendamento para barbearia.
 
-# A entrega deve ser realizada para Desktop e App.
+A entrega deve ser realizada para Desktop e App.
 
-# React, React Native, Node js.
+React, React Native, Node js.
 
-# Segue os comandos e pacotes utilizados durante o desenvolvimento, desde de ambiente Docker a banco de dados Postgres
+Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docker a banco de dados Postgres
 
 # ---------- Pacotes ------------------
 
@@ -46,8 +46,6 @@
 
 # yarn add yup
 
-# ---------- Fim Pacotes --------------------------------------------------
-
 # --------- Comandos Projeto ------------
 
 > Iniciando Projeto
@@ -68,8 +66,6 @@
 
 # yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
-# --------- Fim Comandos Projeto ----------------------------------------
-
 # --------- Instalando o Docker ----------------
 
 > Atualize o aptíndice do pacote.
@@ -79,8 +75,6 @@
 > Instale a versão mais recente do Docker Engine - Community and containserd:
 
 # sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-# ----------------- FIM Docker --------------------------------------------
 
 # ---------------- Banco de Dados --------------------------
 
@@ -102,8 +96,6 @@
 
 # docker start Nome_Container ou ID
 
-# ---------------- Fim Banco de Dados -----------------------------------
-
 # ------- Migrations (tabela) ---------
 
 > CREATE
@@ -119,5 +111,3 @@
 # yarn sequelize db:migrate:undo:all (todas)
 
 # yarn sequelize db:migrate:undo (ultima)
-
-# --------------------- FIM Migrations -----------------------
