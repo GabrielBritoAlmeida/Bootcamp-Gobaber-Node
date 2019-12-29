@@ -14,100 +14,100 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add Express
 
-> Nodemon
+# Nodemon
 
-# yarn add nodemon -D
+> yarn add nodemon -D
 
-> Sucrase lidando com "import" e "export default"
+# Sucrase lidando com "import" e "export default"
 
-# yarn add sucrase -D
+> yarn add sucrase -D
 
-> Bcryptjs (Hash de senha)
+# Bcryptjs (Hash de senha)
 
-# yarn add bcryptjs
+> yarn add bcryptjs
 
-> JWT
+# JWT
 
-# yarn add jsonwebtoken
+> yarn add jsonwebtoken
 
-> Sequelize
+# Sequelize
 
-# yarn add sequelize
+> yarn add sequelize
 
-> Sequelize cli
+# Sequelize cli
 
-# yarn add sequelize-cli -Docker
+> yarn add sequelize-cli -Docker
 
-> pg pg-hstore
+# pg pg-hstore
 
-# yarn add pg pg-hstore
+> yarn add pg pg-hstore
 
-> Yup validação de Dados
+# Yup validação de Dados
 
-# yarn add yup
+> yarn add yup
 
 # --------- Comandos Projeto ------------
 
-> Iniciando Projeto
+# Iniciando Projeto
 
-# yarn init -y
+> yarn init -y
 
-> Rodando servidor
+# Rodando servidor
 
-# yarn dev
+> yarn dev
 
-> Eslint
+# Eslint
 
-# yarn add eslint -D
+> yarn add eslint -D
 
-# yarn eslint --init (instalando padrão Airbnb)
+> yarn eslint --init (instalando padrão Airbnb)
 
-> Prettier
+# Prettier
 
-# yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+> yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
 # --------- Instalando o Docker ----------------
 
-> Atualize o aptíndice do pacote.
+# Atualize o aptíndice do pacote.
 
-# sudo apt-get update
+> sudo apt-get update
 
-> Instale a versão mais recente do Docker Engine - Community and containserd:
+# Instale a versão mais recente do Docker Engine - Community and containserd:
 
-# sudo apt-get install docker-ce docker-ce-cli containerd.io
+> sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # ---------------- Banco de Dados --------------------------
 
-> Instalando o postgres no Docker
+# Instalando o postgres no Docker
 
-# (ubuntu usar sudo) docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11
+> (ubuntu usar sudo) docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11
 
-> Todos os Containers
+# Todos os Containers
 
-# docker ps -a
+> docker ps -a
 
-# docker ps (mostra o Container atual rodando)
+> docker ps (mostra o Container atual rodando)
 
-> Verifica se tem erro no container
+# Verifica se tem erro no container
 
-# docker logs NomeBanco
+> docker logs NomeBanco
 
-> Start no Container
+# Start no Container
 
-# docker start Nome_Container ou ID
+> docker start Nome_Container ou ID
 
 # ------- Migrations (tabela) ---------
 
-> CREATE
+# CREATE
 
-# yarn sequelize migration:create --name=create-users
+> yarn sequelize migration:create --name=create-users
 
-> RODANDO A MIGRATION
+# RODANDO A MIGRATION
 
-# yarn sequelize db:migrate
+> yarn sequelize db:migrate
 
-> DESFAZENDO A MIGRATION
+# DESFAZENDO A MIGRATION
 
-# yarn sequelize db:migrate:undo:all (todas)
+> yarn sequelize db:migrate:undo:all (todas)
 
-# yarn sequelize db:migrate:undo (ultima)
+> yarn sequelize db:migrate:undo (ultima)
