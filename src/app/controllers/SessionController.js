@@ -21,19 +21,20 @@ class SessionControler {
 
     const { email, password } = req.body;
 
-    // Verifica se o usuário existe
+    // Verifica se o usuário existe no Banco de Dados
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
       return res.status(401).json({ error: 'Usuário não existe' });
     }
 
-    // Verifica se a senha está correta
+    /* Verifica se a senha está correta,
+     usando uma função que está no Modulo do usuário */
     if (!(await user.checkPassword(password))) {
       return res.status(401).json({ error: 'Senha inválida!' });
     }
-
-    const { id, name } = user; // já temos o email do FindOne
+    // já temos o email e password no FindOne
+    const { id, name } = user;
 
     return res.json({
       user: {

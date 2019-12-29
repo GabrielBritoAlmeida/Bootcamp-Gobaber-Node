@@ -18,7 +18,7 @@ export default async (req, res, next) => {
     /*
      Promisify evita o uso de uma funcão callback,
      recebendo a função que teria o callback.
-      Promisify também retorno uma função,
+      Promisify também retorna uma função,
       por esse motivo o trecho: promisify(jwt.verify)(token, authConfig.secret)
       essa função recebe apenas token e secret como paremetro.
     */
@@ -31,6 +31,4 @@ export default async (req, res, next) => {
   } catch (error) {
     return res.json({ error: 'Token inválido!' });
   }
-
-  return next();
 };

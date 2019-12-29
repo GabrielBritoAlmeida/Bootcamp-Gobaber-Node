@@ -19,15 +19,18 @@ class UserContorller {
         .json({ error: 'Dados inválidos, conferir os campos informados!' });
     }
 
+    // Consulta no Banco de dados se o usuário existe.
     const userExist = await User.findOne({ where: { email: req.body.email } });
 
     if (userExist) {
       return res.status(400).json({ error: 'Usuário já existe' });
     }
 
+    // Criando usuário no Banco de dados.
     const user = await User.create(req.body);
 
-    return res.json(user); // Retornando tudo
+    // Retornando tudo.
+    return res.json(user);
   }
 
   async update(req, res) {
@@ -38,7 +41,7 @@ class UserContorller {
       password: Yup.string()
         .min(6)
         .when(
-          // field se refere ao próprio campo
+          // field se refere ao próprio campo.
           'oldPassword',
           (oldPassword, field) => (oldPassword ? field.required() : field)
         ),
@@ -56,10 +59,13 @@ class UserContorller {
 
     const { email, oldPassword } = req.body;
 
+    /* Buscando no Banco de dados o usuário,
+       através do id do Usuário que está no Token */
     const user = await User.findByPk(req.userId);
 
-    // Verifica se o usuário vai trocar o email
+    // Verifica se o usuário vai trocar o email.
     if (email !== user.email) {
+      // Verifica se o usuário está cadastrado no Banco de dados.
       const userExist = await User.findOne({ where: { email } });
 
       if (userExist) {
@@ -72,8 +78,10 @@ class UserContorller {
       return res.status(401).json({ error: 'Nova senha igual a antiga senha' });
     }
 
+    // Atualizando as informações do Usuário no Banco de dados.
     await user.update(req.body);
 
+    // Por hora retornando tudo
     return res.json({ user });
   }
 }
