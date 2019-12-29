@@ -88,6 +88,10 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
   yarn add pg pg-hstore
 
 
+// Yup validação de Dados
+  yarn add yup
+
+
 
 -------  Criando nossa primeira Migrations (tabela)  -----------------------------------------------
 

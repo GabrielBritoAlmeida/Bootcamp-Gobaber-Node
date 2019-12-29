@@ -26,6 +26,7 @@ class User extends Model {
     return this;
   }
 
+  // Verifica se a nova senha é diferente da antiga senha
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
