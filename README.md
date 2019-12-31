@@ -116,6 +116,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn sequelize migration:create --name=create-files
 
+-> Appointements (Agendamentos)
+
+> yarn sequelize migration:create --name=create-appointments
+
 # RODANDO A MIGRATION
 
 > yarn sequelize db:migrate

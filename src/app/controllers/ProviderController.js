@@ -3,7 +3,7 @@ import File from '../models/File';
 
 class ProviderController {
   // Listando os usuários, prestador de serviço
-  async index(req, res) {
+  async index(_, res) {
     const providers = await User.findAll({
       where: { provider: true },
       attributes: ['id', 'name', 'email', 'avatar_id'],

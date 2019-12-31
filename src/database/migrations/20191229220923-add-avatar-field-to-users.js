@@ -5,6 +5,7 @@ module.exports = {
       'avatar_id', // Coluna adicionada
       {
         type: Sequelize.INTEGER,
+        // Relacionamento com files
         references: { model: 'files', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
