@@ -28,7 +28,7 @@ class User extends Model {
 
   // Criando relacionamento Tabela de Users e Files
   static associate(models) {
-    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
   }
 
   // Verifica se a nova senha é diferente da antiga senha
