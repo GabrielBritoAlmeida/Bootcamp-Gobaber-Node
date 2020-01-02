@@ -50,6 +50,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add multer
 
+# Trabalhando com data ( @next ultima versão )
+
+> yarn add date-fns@next
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
