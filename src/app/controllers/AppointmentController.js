@@ -5,11 +5,15 @@ import File from '../models/File';
 import Appointment from '../models/Appointments';
 
 class AppointmentController {
-  async index(_, res) {
+  async index(req, res) {
+    const { page = 1 } = req.query;
+
     const appointment = await Appointment.findAll({
       where: { canceled_at: null },
       order: ['date'],
       attributes: ['id', 'date'],
+      limit: 20,
+      offset: (page - 1) * 20,
       include: [
         {
           model: User,
