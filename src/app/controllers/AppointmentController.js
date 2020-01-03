@@ -1,9 +1,34 @@
 import * as Yup from 'yup';
 import { startOfHour, parseISO, isBefore } from 'date-fns';
-import Appointment from '../models/Appointments';
 import User from '../models/User';
+import File from '../models/File';
+import Appointment from '../models/Appointments';
 
 class AppointmentController {
+  async index(_, res) {
+    const appointment = await Appointment.findAll({
+      where: { canceled_at: null },
+      order: ['date'],
+      attributes: ['id', 'date'],
+      include: [
+        {
+          model: User,
+          as: 'provider', // Pegando o apelido pois ele tem mais de um relacionamento
+          attributes: ['id', 'name'],
+          include: [
+            {
+              model: File,
+              as: 'avatar',
+              attributes: ['url', 'path'],
+            },
+          ],
+        },
+      ],
+    });
+
+    return res.json(appointment);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -17,21 +42,20 @@ class AppointmentController {
     const { provider_id, date } = req.body;
 
     /**
-     * Verifica se provider_id é um pretador de serviço
+     * Verifica se provider_id é um prestador de serviço
      */
     const isProvider = await User.findOne({
       where: { id: provider_id, provider: true },
     });
 
     if (!isProvider) {
-      return res
-        .status(401)
-        .json({ error: 'Não encontrado um prestador de serviço!' });
+      return res.status(401).json({ error: 'Não é um prestador de serviço!' });
     }
 
     /**
      * startOfHour deixa a hora sempre do ínicio e redonda,
      * não quebra em minutos, exemplos: 19h, 20h, 21h...
+     * Se usar 19h38 a hora passa para 19h
      */
     const hourStart = startOfHour(parseISO(date));
 
