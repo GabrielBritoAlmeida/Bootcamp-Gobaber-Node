@@ -54,7 +54,7 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add date-fns@next
 
-# Mongoose
+# Mongoose manipulando Mongo DB
 
 > yarn add mongoose
 
