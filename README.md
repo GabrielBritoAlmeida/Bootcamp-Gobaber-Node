@@ -54,6 +54,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add date-fns@next
 
+# Mongoose
+
+> yarn add mongoose
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
@@ -103,6 +107,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 # Start no Container
 
 > docker start Nome_Container ou ID
+
+# Instalando o Mongo no Docker
+
+> docker run --name mongobarber -p 27017:27017 -d -t mongo
 
 # ------- Migrations (tabela) ---------
 
