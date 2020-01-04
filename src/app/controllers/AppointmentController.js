@@ -45,7 +45,18 @@ class AppointmentController {
       return res.status(400).json({ error: 'Dados de agendamento inválido!' });
     }
 
-    const { provider_id, date } = req.body;
+    const { provider_id, date, user_id } = req.body;
+
+    /**
+     * Verifica se user_id é um usuário
+     */
+    const isUser = await User.findOne({
+      where: { id: user_id, provider: false },
+    });
+
+    if (!isUser) {
+      return res.status(401).json({ error: 'Usuário não encontrado!' });
+    }
 
     /**
      * Verifica se provider_id é um prestador de serviço
@@ -92,7 +103,7 @@ class AppointmentController {
      * Criando agendamento
      */
     const appointment = await Appointment.create({
-      user_id: req.userId,
+      user_id,
       provider_id,
       date: hourStart, // Agendamento de hora em hora
     });
@@ -100,8 +111,8 @@ class AppointmentController {
     /**
      * Notificando agendamento para o prestador
      */
-
     const user = await User.findByPk(req.userId);
+
     const formattedDate = format(hourStart, "dd' de 'MMMM' às 'H:mm'h'", {
       locale: pt,
     });
