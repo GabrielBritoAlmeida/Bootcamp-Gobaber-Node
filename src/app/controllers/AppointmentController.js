@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import User from '../models/User';
 import File from '../models/File';
@@ -121,6 +121,37 @@ class AppointmentController {
       content: `Novo agendamento de ${user.name} para dia ${formattedDate}`,
       user: provider_id,
     });
+
+    return res.json(appointment);
+  }
+
+  async delete(req, res) {
+    // Id do agendamento
+    const appointment = await Appointment.findByPk(req.params.id);
+
+    if (req.userId !== appointment.provider_id) {
+      return res
+        .status(401)
+        .json({ error: 'Prestador sem permisão para cancelamento!' });
+    }
+
+    /**
+     * Regra de cancelamento
+     * Hora do agendamento menos 2 horas
+     * ou seja, permitido cancelar até 2h antes.
+     * Ex: agendamento 12h - 2h = hora do cancelamento 10h
+     */
+    const dateWithSub = subHours(appointment.date, 2);
+
+    if (isBefore(dateWithSub, new Date())) {
+      return res
+        .status(401)
+        .json({ error: 'Cancelamento fora do horário permitido!' });
+    }
+
+    appointment.canceled_at = new Date();
+
+    await appointment.save();
 
     return res.json(appointment);
   }
