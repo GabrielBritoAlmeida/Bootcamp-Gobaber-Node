@@ -58,6 +58,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add mongoose
 
+# Envio de email
+
+> yarn add nodemailer
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
