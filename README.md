@@ -62,6 +62,14 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add nodemailer
 
+# Templates de email
+
+> yarn add express-handlebars nodemailer-express-handlebars
+
+# Traballhando com filas
+
+> yarn add bee-queue
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
@@ -94,7 +102,7 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 # ---------------- Banco de Dados --------------------------
 
-# Instalando o postgres no Docker
+# Instalando o Postgres no Docker
 
 > (ubuntu usar sudo) docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11
 
@@ -115,6 +123,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 # Instalando o Mongo no Docker
 
 > docker run --name mongobarber -p 27017:27017 -d -t mongo
+
+# Instalando o banco de dados Redis
+
+> docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 
 # ------- Migrations (tabela) ---------
 
