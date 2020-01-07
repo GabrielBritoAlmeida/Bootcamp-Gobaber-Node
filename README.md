@@ -70,6 +70,21 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add bee-queue
 
+# ------- Exceções e Erros ---------
+
+# Sentry
+
+> instalar conforme orientações no site da Sentry
+> yarn add @sentry/node@5.10.2
+
+# Async erros
+
+> yarn add express-async-errors
+
+# Tratativa das mensagens de erro
+
+> yarn add youch
+
 # --------- Comandos Projeto ------------
 
 # Iniciando Projeto
