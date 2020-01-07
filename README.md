@@ -70,6 +70,10 @@ Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docke
 
 > yarn add bee-queue
 
+# Variáveis de ambiente
+
+> yarn add dotenv
+
 # ------- Exceções e Erros ---------
 
 # Sentry
