@@ -1,12 +1,20 @@
 ## Bootcamp-Gobaber
 
-Projeto final vai entregar um sistema de agendamento para barbearia.
+Projeto focado em construir uma API de agendamento usando Node.Js.
 
-A entrega deve ser realizada para Desktop e App.
+Express framework.
 
-React, React Native, Node js.
+Banco Relacional Postgres.
 
-Segue os comandos e pacotes utilizados durante o desenvolvimento, ambiente Docker a banco de dados Postgres
+Banco não relacional Mongo, Redis.
+
+Docker para monstar ambiente.
+
+Sentry para teste.
+
+Nodemailer para envio do email.
+
+> Mais detalhes do projeto passo a passo logo abaixo:
 
 # ---------- Pacotes ------------------
 
