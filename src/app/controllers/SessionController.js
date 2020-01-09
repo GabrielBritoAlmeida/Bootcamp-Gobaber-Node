@@ -1,8 +1,9 @@
 import jwt from 'jsonwebtoken';
 import * as Yup from 'yup';
 
-import authConfig from '../../config/auth';
 import User from '../models/User';
+import File from '../models/File';
+import authConfig from '../../config/auth';
 
 class SessionControler {
   async store(req, res) {
@@ -22,7 +23,16 @@ class SessionControler {
     const { email, password } = req.body;
 
     // Verifica se o usuário existe no Banco de Dados
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({
+      where: { email },
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['path', 'url'],
+        },
+      ],
+    });
 
     if (!user) {
       return res.status(401).json({ error: 'Usuário não existe' });
@@ -34,13 +44,15 @@ class SessionControler {
       return res.status(401).json({ error: 'Senha inválida!' });
     }
     // já temos o email e password no FindOne
-    const { id, name } = user;
+    const { id, name, avatar, provider } = user;
 
     return res.json({
       user: {
         id,
         name,
         email,
+        provider,
+        avatar,
       },
       token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,

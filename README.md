@@ -82,6 +82,10 @@ Nodemailer para envio do email.
 
 > yarn add dotenv
 
+# Gerando acesso da API com Cors
+
+> yarn add cors
+
 # ------- Exceções e Erros ---------
 
 # Sentry
